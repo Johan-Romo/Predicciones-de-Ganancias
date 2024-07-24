@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Predicción</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .form-group {
+            max-width: 500px; 
+            margin: 0 auto;
+            margin-bottom: 10px; 
+        }
+        .form-control {
+            max-width: 100%; 
+        }
+    </style>
+</head>
+<body style="background-color: #353437; color:white">
+    <div class="container mt-5" >
+        <h2 class="text-center" style="margin-bottom: 30px;">Formulario de Predicción de Ganancias</h2>
+        <div >
+            <form action="/predecir" method="POST" style="background-color: #53576b; color:white;padding: 20px">
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input type="number" class="form-control" id="edad" name="edad" required min="17">
+                </div>
+                <div class="form-group">
+                    <label for="tipo_empleado">Tipo de Empleado:</label>
+                    <select class="form-control" id="tipo_empleado" name="tipo_empleado" required>
+                        <option value="1">Gobierno Estatal</option>
+                        <option value="1">Gobierno Federal</option>
+                        <option value="1">Gobierno Local</option>
+                        <option value="2">Privado</option>
+                        <option value="3">Autónomo sin incorporar</option>
+                        <option value="3">Autónomo incorporado</option>
+                        <option value="4">Sin paga</option>
+                        <option value="5">Nunca ha trabajado</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fnlwgt">FNLWGT:</label>
+                    <input type="number" class="form-control" id="fnlwgt" name="fnlwgt" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="educacion">Educación:</label>
+                    <select class="form-control" id="educacion" name="educacion" required>
+                        <option value="1">Preescolar</option>
+                        <option value="1">1º-4º grado</option>
+                        <option value="1">5º-6º grado</option>
+                        <option value="2">7º-8º grado</option>
+                        <option value="2">9º grado</option>
+                        <option value="2">10º grado</option>
+                        <option value="2">11º grado</option>
+                        <option value="2">12º grado</option>
+                        <option value="3">Graduado de secundaria</option>
+                        <option value="3">Algunos estudios universitarios</option>
+                        <option value="4">Licenciatura</option>
+                        <option value="4">Maestría</option>
+                        <option value="4">Doctorado</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="educacion_num">Años de Educación:</label>
+                    <input type="number" class="form-control" id="educacion_num" name="educacion_num" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="estado_civil">Estado Civil:</label>
+                    <select class="form-control" id="estado_civil" name="estado_civil" required>
+                        <option value="1">Casado (cónyuge civil)</option>
+                        <option value="1">Casado (cónyuge en Fuerzas Armadas)</option>
+                        <option value="2">Nunca casado</option>
+                        <option value="3">Divorciado</option>
+                        <option value="3">Separado</option>
+                        <option value="4">Viudo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ocupacion">Ocupación:</label>
+                    <select class="form-control" id="ocupacion" name="ocupacion" required>
+                        <option value="1">Administrativo-oficinista</option>
+                        <option value="1">Ejecutivo-gerencial</option>
+                        <option value="2">Manipuladores-limpiadores</option>
+                        <option value="2">Otros servicios</option>
+                        <option value="3">Profesional especializado</option>
+                        <option value="3">Soporte técnico</option>
+                        <option value="4">Artesanía-reparación</option>
+                        <option value="4">Operador de máquinas-inspector</option>
+                        <option value="4">Transporte-mudanzas</option>
+                        <option value="5">Fuerzas Armadas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="relacion">Relación:</label>
+                    <select class="form-control" id="relacion" name="relacion" required>
+                        <option value="1">No en familia</option>
+                        <option value="2">Esposo</option>
+                        <option value="3">Esposa</option>
+                        <option value="4">Hijo propio</option>
+                        <option value="5">No casado</option>
+                        <option value="6">Otro pariente</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="raza">Raza:</label>
+                    <select class="form-control" id="raza" name="raza" required>
+                        <option value="1">Blanca</option>
+                        <option value="2">Negra</option>
+                        <option value="3">Asiática-Isleña del Pacífico</option>
+                        <option value="4">Amerindia-Esquimal</option>
+                        <option value="5">Otra</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sexo">Sexo:</label>
+                    <select class="form-control" id="sexo" name="sexo" required>
+                        <option value="1">Masculino</option>
+                        <option value="2">Femenino</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="capital_ganado">Capital Ganado:</label>
+                    <input type="number" class="form-control" id="capital_ganado" name="capital_ganado" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="capital_perdido">Capital Perdido:</label>
+                    <input type="number" class="form-control" id="capital_perdido" name="capital_perdido" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="hr_por_semana">Horas por Semana:</label>
+                    <input type="number" class="form-control" id="hr_por_semana" name="hr_por_semana" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="pais">País:</label>
+                    <select class="form-control" id="pais" name="pais" required>
+                        <option value="1">Estados Unidos</option>
+                        <option value="1">Canadá</option>
+                        <option value="1">México</option>
+                        <option value="1">Puerto Rico</option>
+                        <option value="1">Territorios de EE.UU. (Guam, Islas Vírgenes, etc.)</option>
+                        <option value="2">Cuba</option>
+                        <option value="2">Jamaica</option>
+                        <option value="2">Honduras</option>
+                        <option value="2">Colombia</option>
+                        <option value="2">Ecuador</option>
+                        <option value="2">Haití</option>
+                        <option value="2">República Dominicana</option>
+                        <option value="2">El Salvador</option>
+                        <option value="2">Guatemala</option>
+                        <option value="2">Perú</option>
+                        <option value="2">Nicaragua</option>
+                        <option value="2">Trinidad y Tobago</option>
+                        <option value="3">Inglaterra</option>
+                        <option value="3">Alemania</option>
+                        <option value="3">Italia</option>
+                        <option value="3">Polonia</option>
+                        <option value="3">Portugal</option>
+                        <option value="3">Francia</option>
+                        <option value="3">Escocia</option>
+                        <option value="3">Irlanda</option>
+                        <option value="3">Hungría</option>
+                        <option value="3">Grecia</option>
+                        <option value="3">Países Bajos</option>
+                        <option value="3">Yugoslavia</option>
+                        <option value="4">India</option>
+                        <option value="4">Irán</option>
+                        <option value="4">Filipinas</option>
+                        <option value="4">Camboya</option>
+                        <option value="4">Tailandia</option>
+                        <option value="4">Laos</option>
+                        <option value="4">Taiwán</option>
+                        <option value="4">China</option>
+                        <option value="4">Japón</option>
+                        <option value="4">Vietnam</option>
+                        <option value="4">Hong Kong</option>
+                        <option value="5">Sudáfrica</option>
+                        <option value="5">Nigeria</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" style="margin-bottom: 50px; margin-top: 50px;color: black; background-color: #e2c99f;">Predecir</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
